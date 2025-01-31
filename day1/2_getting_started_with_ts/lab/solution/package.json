@@ -1,0 +1,6 @@
+{
+  "name": "01-a-world-of-types-lab-solution",
+  "devDependencies": {
+    "@total-typescript/tsconfig": "^1.0.4"
+  }
+}

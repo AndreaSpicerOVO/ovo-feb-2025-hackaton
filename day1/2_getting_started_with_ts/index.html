@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html class="sl-root decks export offline loaded">
+
+<head>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, minimal-ui">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="manifest"
+		href='data:application/manifest+json,{"display": "standalone", "name": "Intro to TypeScript course"}' />
+	<title>Intro to TypeScript course</title>
+
+
+	<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+</head>
+
+<body class="reveal-viewport theme-font-montserrat theme-color-sand-blue">
+	<div class="reveal">
+		<div class="slides">
+			<section data-id="927601688575d39bcd712d117c8a4124">
+				<div class="sl-block sl-block-group" data-block-type="group" data-name="group-deafe4"
+					data-block-id="11479a5f38ad81dceb1a71b9be44a111">
+					<div class="sl-block-content sl-block-group-content"
+						style="transform-origin: 640.001px 360px 0px; z-index: 10;">
+						<div class="sl-block" data-block-type="text"
+							style="width: 408.821px; left: 562.346px; top: 257px; height: auto;"
+							data-block-id="1cc65f3a67f2a2311ef495b388ce368c">
+							<div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text"
+								style="color: rgb(49, 120, 198); z-index: 11;">
+								<h1 style="text-align:left"><span style="color:#2F4F4F">Intro to</span></h1>
+
+								<h1 style="text-align:left">TypeScript</h1>
+							</div>
+						</div>
+						<div class="sl-block" data-block-type="image"
+							style="width: 206px; height: 206px; left: 308.834px; top: 257px; min-width: 1px; min-height: 1px;"
+							data-name="image-a37355" data-block-id="92043ee6062c0b15826c7f5a3e9a4e4f">
+							<div class="sl-block-content" style="z-index: 12;"><img class="" data-natural-width="1200"
+									data-natural-height="1200" data-lazy-loaded=""
+									data-src="intro-to-typescript-course/9ca1f6f4d694988520940211064126f1.png"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+
+	</textarea>
+			</section>
+			<section data-id="6805bf2aa797e1dcb6a18d91edca2703">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 186.5px; height: auto;"
+					data-block-id="a00481ae3e208bf9474fc89f45df745f">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Agenda: Part 1</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 297.5px; height: auto;"
+					data-block-id="ec6ff75a8d74c327951bc1d50891300d">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6;" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="0">
+								<strong>Three sections:</strong> A World of Types, Types in Action, Flexible Types
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section data-id="3aa263eb060cfbab01807bbb3f1b4311">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 147.5px; height: auto;"
+					data-block-id="6b4ddcb05fdd14ee59455848985a5fa7">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(34, 34, 34); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Goals</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 258.5px; height: auto;"
+					data-block-id="a58ce1ccf01f328648145ffca35f2d55">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6;" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="0">Learn what TypeScript is and how to use it</li>
+							<li class="fragment" data-fragment-index="1">Configure a TypeScript project</li>
+							<li class="fragment" data-fragment-index="2">Get comfortable with the fundamentals</li>
+							<li class="fragment" data-fragment-index="3">Tackle common "gotchas" when using TypeScript</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section data-id="bb28ba89373728dc50493d593ef9c9a3">
+				<div class="sl-block" data-block-type="text"
+					style="width: 1134.32px; left: 72.84px; top: 254.5px; height: auto;"
+					data-block-id="0f486b2f66820e1cabb95c2c61aecffc">
+					<div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text"
+						style="z-index: 10; border-style: dashed; border-width: 8px; border-radius: 50px; line-height: 2.6; border-color: rgb(49, 120, 198);"
+						data-has-line-height="">
+						<h1><span style="color:#2F4F4F">Section 1: A World of Types</span></h1>
+					</div>
+				</div>
+			</section>
+			<section data-id="b8b8acab7e13eec5edccf9cce63c1ab0">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 59.6612px; height: auto;"
+					data-block-id="05348b3e8ed742db2b53509c2d607862">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">What is TypeScript?</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 170.662px; height: auto;"
+					data-block-id="d03105e8438fc11babc150d8656b6fe3">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="0">"TypeScript is <strong>JavaScript with syntax for
+									types"</strong>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 424.339px; height: auto;"
+					data-block-id="c31274371f5d4f55cd5fc44d3a2fdbd8" data-name="text-98fc1c">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 12; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="3">Strongly typed programming language</li>
+							<li class="fragment" data-fragment-index="4"><span style="color:#000000">Released publicly by Microsoft in
+									2012</span></li>
+							<li class="fragment" data-fragment-index="5">TypeScript = <span style="color:#000000">JavaScript +
+									types</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 1054.43px; height: auto; left: 112.785px; top: 268.339px;" data-name="code-c9d4eb"
+					data-block-id="4c22780d92a267d96a6cae5927127a59">
+					<div class="sl-block-content notranslate fragment" data-highlight-theme="solarized-light"
+						data-code-frame="none" style="z-index: 13;" data-code-autoheight="true" data-fragment-index="1">
+						<pre style="font-size: 40px; line-height: 48px; tab-size: 4;"
+							class="typescript"><code>let myFavoriteFood = 'Pozole Rojo';</code></pre>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 1054.43px; height: auto; left: 112.785px; top: 348.339px;"
+					data-block-id="8be4ac39035ad4beed82a509add861be" data-name="code-ca488d">
+					<div class="sl-block-content notranslate fragment" data-highlight-theme="solarized-light"
+						data-code-frame="none" style="z-index: 14;" data-code-autoheight="true" data-fragment-index="2">
+						<pre style="font-size: 40px; line-height: 48px; tab-size: 4;"
+							class="typescript"><code>let myFavoriteFood: string = 'Pozole Rojo';</code></pre>
+					</div>
+				</div>
+			</section>
+			<section data-id="8b278f0dcdf6a7aad25346d8f2ab9da7">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 93.4999px; height: auto;"
+					data-block-id="0fd5e478ce2216f22744b6c89fd54aed">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Types: Basic Types</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 204.5px; height: auto;"
+					data-block-id="f3e7c4bb2fda486cf7c363673b96901b">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(34, 34, 34);" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="0">Top types (represent any value): <span
+									style="color:#008000"><code>unknown, any</code></span>
+							</li>
+							<li class="fragment" data-fragment-index="1">Types which correspond to JavaScript primitives:
+								<ul>
+									<li class="visible">
+										<span style="color:#008000"><code>string</code></span>, <span
+											style="color:#008000"><code>number, bigint,</code></span> <span
+											style="color:#008000"><code>boolean, symbol</code></span>
+									</li>
+									<li class="visible"><span style="color:#008000"><code>null, undefined</code></span></li>
+								</ul>
+							</li>
+							<li class="fragment" data-fragment-index="2">Bottom type (represents state which shouldn't exist): <span
+									style="color:#008000"><code>never</code></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section data-id="dae7347b9b97efbb064c1ed9439d7d5e">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 97px; height: auto;"
+					data-block-id="c8b6edd4033fa3e151ff3a28526a33cf">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Types: Objects</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 208px; height: auto;"
+					data-block-id="ce9e6700c68f0d9c3e36d207d447ac2b">
+					<div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height=""
+						data-fragment-index="0">
+						<h3 class="visible">Anonymous object type</h3>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 1075px; height: 365.673px; left: 102.5px; top: 334.422px;" data-name="code-fde68a"
+					data-block-id="9f441a4760b1825ad4a0693b16d88645">
+					<div class="sl-block-content notranslate fragment" data-highlight-theme="solarized-light"
+						data-code-frame="none" style="z-index: 12;" data-fragment-index="1">
+						<pre class="typescript" style="font-size: 32px; line-height: 38px; tab-size: 4;"><code>const boat: {
+  name: string;
+  length: number;
+  atSea: boolean;
+} = {
+  name: "S. S. Minnow",
+  length: 30,
+  atSea: false,
+};</code></pre>
+					</div>
+				</div>
+			</section>
+			<section data-id="e55377d45fbd617fd3e72389151a012c">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 97px; height: auto;"
+					data-block-id="1c9d5b0cfe4567397e63fffe294f2341">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Types: Objects</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 208px; height: auto;"
+					data-block-id="782f1f42be953993f7d73d4a6d460a1f">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<h3 class="visible">Interface declaration</h3>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 1075px; height: 263.985px; left: 102.5px; top: 334.422px;" data-name="code-fde68a"
+					data-block-id="ea2d5439f89ad6fc47864b5821caf110">
+					<div class="sl-block-content notranslate fragment" data-highlight-theme="solarized-light"
+						data-code-frame="none" style="z-index: 12;" data-fragment-index="0">
+						<pre class="typescript" style="font-size: 42px; line-height: 50px; tab-size: 4;"><code>interface Boat {
+  name: string;
+  length: number;
+  atSea: boolean;
+}</code></pre>
+					</div>
+				</div>
+			</section>
+			<section data-id="680c9d42bdd79447dde86d7d416c025a">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 97px; height: auto;"
+					data-block-id="2c6f6ad630e17fcfe5e288b5ba0634c6">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Types: Objects</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 208px; height: auto;"
+					data-block-id="5b5bd781fb37861b17d1b9c23fdc2adf">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<h3 class="visible">Type alias</h3>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 1075px; height: 263.985px; left: 102.5px; top: 334.422px;" data-name="code-fde68a"
+					data-block-id="5705223c0e38a491579782d112a9756d">
+					<div class="sl-block-content notranslate fragment" data-highlight-theme="solarized-light"
+						data-code-frame="none" style="z-index: 12;" data-fragment-index="0">
+						<pre class="typescript" style="font-size: 42px; line-height: 50px; tab-size: 4;"><code>type Boat = {
+  name: string;
+  length: number;
+  atSea: boolean;
+};</code></pre>
+					</div>
+				</div>
+			</section>
+			<section data-id="4c8b2113b4064d418254da4ac30a096e">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 97px; height: auto;"
+					data-block-id="f0c061fc6e0685be0064b4258130753b">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Types: Objects</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 208px; height: auto;"
+					data-block-id="342cbacb1573e19d023673f26bf40911">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<h3 class="visible">Property modifiers</h3>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 309px; height: auto;"
+					data-block-id="d5afe9a98ca708960af694b1c9b9feb3" data-name="text-2fbef9">
+					<div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 12; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height=""
+						data-fragment-index="0">
+						<p><span style="color:#008000"><span style="font-size:2.0em"><code>?</code></span> </span>for optional
+							properties</p>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 434px; height: auto;"
+					data-block-id="aa648dfc1100b4df073063ca34f34e31" data-name="text-751a32">
+					<div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 13; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height=""
+						data-fragment-index="1">
+						<p><span style="font-size:2.0em"><span style="color:#008000"><code>readonly</code></span></span> for
+							immutable properties</p>
+					</div>
+				</div>
+			</section>
+			<section data-id="4d711250b72ee983c6f3e6840eeaaad6">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 97px; height: auto;"
+					data-block-id="71b21d57a356ff49c82707a713ad3924">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Types: Objects</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 208px; height: auto;"
+					data-block-id="6540d7b50645dd5ffd77875a1205c5f0">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<h3 class="fragment" data-fragment-index="0">Interfaces vs Type aliases: Which to use?</h3>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 309px; height: auto;"
+					data-name="text-2fbef9" data-block-id="ec8bacb8c727d679839a2276daa168f9">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 13; text-align: left; color: rgb(0, 0, 0); line-height: 2.6;" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="1">Interfaces are open, type aliases are closed</li>
+							<li class="fragment" data-fragment-index="2">Interfaces can provide slightly better error messages</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section data-id="fce71c3e7f4259a3355c1c66cfa2eedb">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 144px; height: auto;"
+					data-block-id="e225632f174803b4a24aec6e0f644caa">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Types: Arrays</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 255px; height: auto;"
+					data-block-id="33aadbd83404972d102a56cadfb53327">
+					<div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height=""
+						data-fragment-index="0">
+						<h3>Square bracket syntax</h3>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 1075px; height: 202.548px; left: 102.5px; top: 371.006px;" data-name="code-9f53c6"
+					data-block-id="8092a66e8186e1aa44b1f0ae99392d29">
+					<div class="sl-block-content notranslate fragment" data-highlight-theme="solarized-light"
+						data-code-frame="none" style="z-index: 12;" data-fragment-index="1">
+						<pre class="typescript" style="font-size: 32px; line-height: 38px; tab-size: 4;"><code>const populations: number[] = [
+  8537673,
+  2140526,
+  3769495
+];</code></pre>
+					</div>
+				</div>
+			</section>
+			<section data-id="8eb3917e35a85abfe5e5032e1aa9de15">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 144px; height: auto;"
+					data-block-id="b15fb80f93aa9f132d9794b3d90ed4de">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Types: Arrays</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 255px; height: auto;"
+					data-block-id="78a9fa1272a2546a75f87cbcf8c6c536">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<h3>The <code>Array</code> type</h3>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 1075px; height: 202.548px; left: 102.5px; top: 371.006px;" data-name="code-9f53c6"
+					data-block-id="16b4e291b6bf63ab1684406a4bcb4676">
+					<div class="sl-block-content notranslate fragment" data-highlight-theme="solarized-light"
+						data-code-frame="none" style="z-index: 12;" data-fragment-index="0">
+						<pre class="typescript" style="font-size: 32px; line-height: 38px; tab-size: 4;"><code>const populations: Array&lt;number&gt; = [
+  8537673,
+  2140526,
+  3769495
+];</code></pre>
+					</div>
+				</div>
+			</section>
+			<section data-id="c7c14e5a8b451eb84512b143cc8eb440">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 144px; height: auto;"
+					data-block-id="1b1e456862f10da583476b5906140a5d">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Types: Arrays</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 255px; height: auto;"
+					data-block-id="16373fa8f80b7d6d69e7723f693aa98d">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<h3>Tuple type for fixed length arrays</h3>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 1075px; height: 173.948px; left: 102.5px; top: 371.006px;" data-name="code-9f53c6"
+					data-block-id="2042cdacad7b947c3545f58874b6dac0">
+					<div class="sl-block-content notranslate fragment" data-highlight-theme="solarized-light"
+						data-code-frame="none" style="z-index: 12;" data-fragment-index="0">
+						<pre class="typescript" style="font-size: 32px; line-height: 38px; tab-size: 4;"><code>const highestTemperature: [string, number] = [
+  'Vancouver',
+  34.4
+];</code></pre>
+					</div>
+				</div>
+			</section>
+			<section data-id="291a02d41b360b17025a49f5c7ee2618">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 93px; height: auto;"
+					data-block-id="c8f8bb7c9dbd0d8553298104b28b719a">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(34, 34, 34); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Benefits of TypeScript</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 103px; top: 204px; height: auto;"
+					data-block-id="a389ae778eb56952282bcb2e6dc249d1">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.34; color: rgb(34, 34, 34);" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="0"><span style="color:#000000"><strong>“The main benefit of
+										TypeScript is that it can highlight unexpected behavior in your code, lowering the chance of
+										bugs.</strong>”<br>
+									<em>— TypeScript docs</em></span></li>
+							<li class="fragment" data-fragment-index="1"><span style="color:#000000">Types as a form of
+									documentation</span></li>
+							<li class="fragment" data-fragment-index="2"><span style="color:#000000">Safer code refactoring</span>
+							</li>
+							<li class="fragment" data-fragment-index="3"><span style="color:#000000">Can use types as a contract
+									between different parts of our applications</span></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section data-id="a0b2fbc18a0b07c1fdcef354c2c058c4">
+				<div class="sl-block" data-block-type="text"
+					style="height: auto; width: 819.265px; left: 170.847px; top: 190.612px;" data-name="text-536b1b"
+					data-block-id="dceeb418ef4e03182654e1d780deb905">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 10; line-height: 1.95;" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="0">Visual Studio Code
+								<ul>
+									<li>
+										<code>Problems</code> panel
+									</li>
+									<li>'<code>Go to Type Definition</code>'</li>
+								</ul>
+							</li>
+							<li class="fragment" data-fragment-index="1">Editors such as WebStorm and Sublime Text also have built-in
+								support for TypeScript</li>
+							<li class="fragment" data-fragment-index="2">Other editors provide TypeScript support via extensions or
+								plugins</li>
+						</ul>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text"
+					style="width: 934.306px; left: 172.847px; top: 95.3874px; height: auto;"
+					data-block-id="3c4ce9a03205c71078fa329acf2553b4" data-name="text-483c4c">
+					<div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text"
+						style="z-index: 11; text-align: left;">
+						<h2><span style="color:#2F4F4F"><span class="notion-enable-hover">Code Editor Integration</span></span></h2>
+					</div>
+				</div>
+			</section>
+			<section data-id="6eb769eeb804576479146695678c77cc">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 147.5px; height: auto;"
+					data-block-id="8026d80f4a47aea42c143e0b8e986a5c">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">How do we run TypeScript code?</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 258.501px; height: auto;"
+					data-block-id="0e7d4a3300c0c4811ff20e72f0d9f4c6">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="0"><span style="color:#000000">We don't, we compile it!</span>
+							</li>
+							<li class="fragment" data-fragment-index="1"><span style="color:#000000">TypeScript code compiles to
+									JavaScript</span></li>
+							<li class="fragment" data-fragment-index="2"><span style="color:#000000">Types are stripped away at
+									compile time</span></li>
+							<li class="fragment" data-fragment-index="3"><span style="color:#000000">Then we run the compiled
+									JavaScript</span></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section data-id="76872c932c01b7f75cf7c53aa275b944">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 52.5003px; height: auto;"
+					data-name="text-fa2348" data-block-id="2ed547a08d6c526a48757a2476a609b1">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">TypeScript Project Configuration</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 163.5px; height: auto;"
+					data-name="text-b7dfb3" data-block-id="ac4e23922e3e18801785ac2bc5fa4344">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 1.95; color: rgb(0, 0, 0);" data-has-line-height="">
+						<h3 class="visible">TSConfig</h3>
+
+						<ul>
+							<li class="fragment" data-fragment-index="0"><a href="https://www.typescriptlang.org/tsconfig"
+									target="_blank">TSConfig reference</a></li>
+							<li class="fragment" data-fragment-index="1">Base configurations:
+								<ul>
+									<li><a href="https://github.com/tsconfig/bases" target="_blank">TSConfig bases</a></li>
+									<li><a href="https://github.com/total-typescript/tsconfig/"
+											target="_blank">@total-typescript/tsconfig</a></li>
+								</ul>
+							</li>
+						</ul>
+
+						<h3 class="visible">Linting</h3>
+
+						<ul>
+							<li class="fragment" data-fragment-index="2"><a href="https://typescript-eslint.io/"
+									target="_blank">typescript-eslint </a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section data-id="0ad0ab9d57c7249ec436ca41cf037d39">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102px; top: 96px; height: auto;"
+					data-name="text-fa2348" data-block-id="86346713e06cd9ce078655f0e613d2b1">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Compilation &amp; Execution</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 103px; top: 207px; height: auto;"
+					data-name="text-b7dfb3" data-block-id="12cc22ef179e715d6aa94df35f196d99">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 1.95; color: rgb(0, 0, 0);" data-has-line-height="">
+						<h3 class="fragment" data-fragment-index="0">Tools that can compile TypeScript</h3>
+
+						<p class="fragment" data-fragment-index="1">TypeScript compiler: <a href="http://www.npmjs.com/package/tsc"
+								target="_blank"><code>tsc</code></a><br>
+							Bundlers: <a href="https://vitejs.dev/guide/features.html#typescript" target="_blank">Vite,</a> <a
+								href="https://esbuild.github.io/content-types/#typescript" target="_blank">esbuild</a>, <a
+								href="https://swc.rs/" target="_blank">swc</a></p>
+
+						<h3 class="fragment" data-fragment-index="2">Tools that compile TypeScript <strong>and</strong> run the code
+						</h3>
+
+						<p class="fragment" data-fragment-index="3">JavaScript runtimes: <a href="https://deno.com/"
+								target="_blank">Deno,</a> <a href="https://bun.sh/" target="_blank">Bun</a><br>
+							TypeScript code runners: <a href="https://www.npmjs.com/package/tsx" target="_blank">tsx,</a> <a
+								href="https://www.npmjs.com/package/tsm" target="_blank">tsm</a>, <a
+								href="https://www.npmjs.com/package/ts-node" target="_blank">ts-node</a></p>
+					</div>
+				</div>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					# Lab Time
+
+					
+				</textarea>
+			</section>
+		</div>
+	</div>
+
+	<script>
+		var SLConfig = { "deck": { "id": 3158639, "slug": "intro-to-typescript-course", "title": "Intro to TypeScript course", "description": "", "width": 1280, "height": 720, "margin": 0.05, "visibility": "self", "published_at": null, "sanitize_messages": null, "thumbnail_url": "https://s3.amazonaws.com/media-p.slid.es/thumbnails/ec1ff600dc84eb6b782205e2a84eb154/thumb.jpg?1712082399", "view_count": 0, "user": { "id": 2686425, "username": "simonplend", "name": null, "description": null, "thumbnail_url": "https://www.gravatar.com/avatar/0eb11842806f99bbd6698679ffb049b6?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png", "account_type": "lite", "team_id": null, "settings": { "id": 57293705, "present_controls": true, "present_upsizing": true, "present_pointer": false, "present_notes": true, "default_deck_tag_id": null } }, "background_transition": "slide", "transition": "slide", "theme_id": null, "theme_font": "montserrat", "theme_color": "sand-blue", "auto_slide_interval": 0, "comments_enabled": false, "forking_enabled": false, "rolling_links": false, "center": false, "shuffle": false, "should_loop": false, "share_notes": false, "slide_number": false, "slide_count": 49, "rtl": false, "version": 2, "collaborative": null, "deck_user_editor_limit": 1, "data_updated_at": 1724094492294, "font_typekit": null, "font_google": null, "time_limit": 20, "navigation_mode": "default", "upsizing_enabled": true, "language": "en", "notes": { "df1a00714680956beb7da1275e7f10d6": "- Learn what TypeScript is, how it works, and how to use it\n- Dive deeper into features of TypeScript\n- Remix, reuse and combine types", "ca3a6e325d0f334976b23c5c3c22ca51": "- Type declarations in packages in node_modules\n- TypeScript compiler automatically discovers and applies package type declarations", "0ad0ab9d57c7249ec436ca41cf037d39": "- Tools that compile and run don't output JS, handle everything internally.\n- Most tools which compile TS and run the resulting JS code do not perform type-checking. Keeps things fast when compiling.", "e55377d45fbd617fd3e72389151a012c": "Interfaces in TypeScript have nothing to do with class interfaces.", "4c8b2113b4064d418254da4ac30a096e": "Can make all props in an object type readonly with `Readonly` utility type, but will cover this later.", "8eb3917e35a85abfe5e5032e1aa9de15": "The square bracket syntax Type[] is the syntax used in TS docs and errors, we'll be using that syntax in this class. In genera can use whichever syntax you prefer.", "500bd6b132a6b5582980838ef344ae13": "\"Generic\" is not a noun, it's an adjective in this context.", "660d3742cfece52dea3c31034db2fadf": "Mostly going to focus on generic functions in this class.", "dae7347b9b97efbb064c1ed9439d7d5e": "Three ways to define an object type", "dbb0fd385ec724573219f4e84073c9fd": "Allow us to control the mutability and visibility of class fields.", "a87ace6d58450ce540a351af2d44e253": "Jump into sample for this" } } };
+
+
+		// Use local fonts
+		SLConfig.fonts_url = 'lib/fonts/';
+	</script>
+
+	<script src="lib/reveal.js"></script>
+	<script src="lib/reveal-plugins.js"></script>
+	<script src="lib/offline.js"></script>
+
+	<!-- Initialize the presentation -->
+	<script>
+		Reveal.initialize({
+			width: 1280,
+			height: 720,
+			margin: 0.05,
+
+
+			hash: true,
+			controls: true,
+			progress: true,
+			mouseWheel: false,
+			showNotes: false,
+			slideNumber: false,
+			fragmentInURL: true,
+
+			autoSlide: 0,
+			autoSlideStoppable: true,
+
+			autoAnimateMatcher: SL.deck.AutoAnimate.matcher,
+
+			scrollActivationWidth: null,
+
+			center: false,
+			shuffle: false,
+			loop: false,
+			rtl: false,
+			navigationMode: "default",
+
+			transition: "slide",
+			backgroundTransition: "slide",
+
+			highlight: {
+				escapeHTML: false
+			},
+
+			plugins: [RevealZoom, RevealNotes, RevealMarkdown, RevealHighlight]
+		});
+	</script>
+
+
+
+
+</body>
+
+</html>

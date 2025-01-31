@@ -1,0 +1,13 @@
+{
+	"1.1 - Overview of Node": "../day1/1_overview_of_node",
+	"1.2 - Getting Started with TS": "../day1/2_getting_started_with_ts",
+	"1.3 - Types in Action": "../day1/3_types_in_action",
+	"1.4 - Flexible Types": "../day1/4_flexible_types",
+	"2.1 - Generics": "../day2/1_generics",
+	"2.2 - Classes": "../day2/2_classes",
+	"2.3 - Debugging TypeScript": "../day2/3_debugging_typescript",
+	"2.4 - Error Handling": "../day2/4_understanding_error_handling",
+	"3.1 - Understanding Streams": "../day3/1_understanding_streams",
+	"3.2 - Async Programming Patterns": "../day3/2_async_programming_patterns",
+	"4.1 - Intro to Deno": "../day4/1_deno_overview"
+}

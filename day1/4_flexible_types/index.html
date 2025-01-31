@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="sl-root decks export offline loaded">
+
+<head>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, minimal-ui">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="manifest"
+		href='data:application/manifest+json,{"display": "standalone", "name": "Intro to TypeScript course"}' />
+	<title>Intro to TypeScript course</title>
+
+
+	<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+</head>
+
+<body class="reveal-viewport theme-font-montserrat theme-color-sand-blue">
+	<div class="reveal">
+		<div class="slides">
+
+			<section data-id="58260db13bf14459bcbf89023c54c058">
+				<div class="sl-block" data-block-type="text"
+					style="width: 1134.32px; left: 72.84px; top: 254.5px; height: auto;"
+					data-block-id="a8f3e8d47d1bf1442c160010af5e2f9b">
+					<div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text"
+						style="z-index: 10; border-style: dashed; border-width: 8px; border-radius: 50px; line-height: 2.6; border-color: rgb(49, 120, 198);"
+						data-has-line-height="">
+						<h1><span style="color:#2F4F4F">Flexible Types</span></h1>
+					</div>
+				</div>
+			</section>
+			<section data-id="4adb9e1e6d3b78e527fe116a18443358">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 323px; height: auto;"
+					data-block-id="a9d7a48380510384b25adcab65ca7a72">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10;">
+						<h2><span style="color:#2F4F4F">Extending object types</span></h2>
+					</div>
+				</div>
+			</section>
+			<section data-id="94d8f121365ee7f9eb2b8503f3521109">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 79.2212px; height: auto;"
+					data-block-id="336fff25f11506868df3bd8a7dec4aa3">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Extending an interface</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 849.553px; height: 323.304px; left: 264.391px; top: 317.475px;" data-name="code-23cff0"
+					data-block-id="6c8d59a63f6475a3456845977262259f">
+					<div class="sl-block-content notranslate" data-highlight-theme="solarized-light" data-code-frame="none"
+						style="z-index: 11;">
+						<pre class="typescript" style="font-size: 32px; line-height: 38px; tab-size: 4;"><code>interface Comment {
+  id: string;
+  body: string;
+}
+
+interface ApprovedComment extends Comment {
+  approved: boolean;
+}</code></pre>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 574.147px; height: 48.9573px; left: 115.021px; top: 229.521px;" data-name="code-35eecd"
+					data-block-id="908093ae6c6ce193f6c4f495705abe8c">
+					<div class="sl-block-content notranslate" data-highlight-theme="solarized-light" data-code-frame="none"
+						style="z-index: 12;">
+						<pre class="typescript"
+							style="font-size: 32px; line-height: 38px; tab-size: 4;"><code>interface X extends Y { ... }</code></pre>
+					</div>
+				</div>
+			</section>
+			<section data-id="a87ace6d58450ce540a351af2d44e253">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 323px; height: auto;"
+					data-block-id="0318a89f9270f42bcfe32f20e5bfc192">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10;">
+						<h2>
+							<span style="color:#2F4F4F">Intersection
+								Types:</span> <code><span class="notion-enable-hover" style="color:#EB5757">&amp;</span></code>
+						</h2>
+					</div>
+				</div>
+			</section>
+			<section data-id="203bef4fa9a5905f5afedb59cea7dd89">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 88.7531px; height: auto;"
+					data-block-id="41cde5a6f59bc49ddb7197199c5a9675">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left;">
+						<h2><span style="color:#2F4F4F">Object index signatures</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="code"
+					style="width: 628.17px; height: 301.059px; left: 102.5px; top: 330.189px;" data-name="code-99b4df"
+					data-block-id="70df47dae53b721bf44e3eb02d9a97fc">
+					<div class="sl-block-content notranslate fragment" data-highlight-theme="solarized-light"
+						data-code-frame="none" style="z-index: 11;" data-fragment-index="1">
+						<pre class="typescript" style="font-size: 32px; line-height: 38px; tab-size: 4;"><code>type StringArray = {
+  [index: number]: string;
+}
+
+type NumberDictionary = {
+  [index: string]: number;
+}</code></pre>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 175.529px; height: auto;"
+					data-block-id="c08888adc4a53bf25822940da0653e84" data-name="text-97db2c">
+					<div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 12; text-align: left; line-height: 1.95; color: rgb(0, 0, 0);" data-has-line-height=""
+						data-fragment-index="0">
+						<p>When you don't know the names of an object's properties, but know what the types should be.</p>
+					</div>
+				</div>
+			</section>
+			<section data-id="fa8dcc5a84abcc5147635881394881c6">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 323px; height: auto;"
+					data-block-id="dd0f01c6cab323165a569cddb98662e5">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10;">
+						<h2>
+							<code><span class="notion-enable-hover" style="color:#EB5757">typeof</span></code> <span
+								style="color:#2F4F4F">Type Operator</span>
+						</h2>
+					</div>
+				</div>
+			</section>
+			<section data-id="cb63266c4e8412dc2c2e8cba506b615a">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 323px; height: auto;"
+					data-block-id="a55c426acaba427f6b8949e635f8bc29">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10;">
+						<h2>
+							<code><span class="notion-enable-hover" style="color:#EB5757">export</span></code> <span
+								style="color:#2F4F4F">and</span> <code><span class="notion-enable-hover" style="color:#EB5757">import</span></code>
+						</h2>
+					</div>
+				</div>
+			</section>
+			<section data-id="ca3a6e325d0f334976b23c5c3c22ca51">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 185.5px; height: auto;"
+					data-block-id="e32a4ba27d2cb686be067ee8453408ea" data-name="text-fa2348">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2>
+							<span style="color:#2F4F4F">Type Declarations: </span><span
+								style="color:#008000"><code>.d.ts</code></span>
+						</h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 296.5px; height: auto;"
+					data-block-id="648ab408d50c0838d7dc8a53d51cf19c" data-name="text-b7dfb3">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<ol>
+							<li class="fragment" data-fragment-index="0">Add types into project code that we write</li>
+							<li class="fragment" data-fragment-index="1">Built-in to third-party package</li>
+							<li class="fragment" data-fragment-index="2">Provided by an <code>@types</code> packages (<a
+									href="https://github.com/DefinitelyTyped/DefinitelyTyped" target="_blank">DefinitelyTyped project)</a>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+		# Lab time
+	</textarea>
+			</section>
+		</div>
+	</div>
+
+	<script>
+		var SLConfig = { "deck": { "id": 3158639, "slug": "intro-to-typescript-course", "title": "Intro to TypeScript course", "description": "", "width": 1280, "height": 720, "margin": 0.05, "visibility": "self", "published_at": null, "sanitize_messages": null, "thumbnail_url": "https://s3.amazonaws.com/media-p.slid.es/thumbnails/ec1ff600dc84eb6b782205e2a84eb154/thumb.jpg?1712082399", "view_count": 0, "user": { "id": 2686425, "username": "simonplend", "name": null, "description": null, "thumbnail_url": "https://www.gravatar.com/avatar/0eb11842806f99bbd6698679ffb049b6?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png", "account_type": "lite", "team_id": null, "settings": { "id": 57293705, "present_controls": true, "present_upsizing": true, "present_pointer": false, "present_notes": true, "default_deck_tag_id": null } }, "background_transition": "slide", "transition": "slide", "theme_id": null, "theme_font": "montserrat", "theme_color": "sand-blue", "auto_slide_interval": 0, "comments_enabled": false, "forking_enabled": false, "rolling_links": false, "center": false, "shuffle": false, "should_loop": false, "share_notes": false, "slide_number": false, "slide_count": 49, "rtl": false, "version": 2, "collaborative": null, "deck_user_editor_limit": 1, "data_updated_at": 1724094492294, "font_typekit": null, "font_google": null, "time_limit": 20, "navigation_mode": "default", "upsizing_enabled": true, "language": "en", "notes": { "df1a00714680956beb7da1275e7f10d6": "- Learn what TypeScript is, how it works, and how to use it\n- Dive deeper into features of TypeScript\n- Remix, reuse and combine types", "ca3a6e325d0f334976b23c5c3c22ca51": "- Type declarations in packages in node_modules\n- TypeScript compiler automatically discovers and applies package type declarations", "0ad0ab9d57c7249ec436ca41cf037d39": "- Tools that compile and run don't output JS, handle everything internally.\n- Most tools which compile TS and run the resulting JS code do not perform type-checking. Keeps things fast when compiling.", "e55377d45fbd617fd3e72389151a012c": "Interfaces in TypeScript have nothing to do with class interfaces.", "4c8b2113b4064d418254da4ac30a096e": "Can make all props in an object type readonly with `Readonly` utility type, but will cover this later.", "8eb3917e35a85abfe5e5032e1aa9de15": "The square bracket syntax Type[] is the syntax used in TS docs and errors, we'll be using that syntax in this class. In genera can use whichever syntax you prefer.", "500bd6b132a6b5582980838ef344ae13": "\"Generic\" is not a noun, it's an adjective in this context.", "660d3742cfece52dea3c31034db2fadf": "Mostly going to focus on generic functions in this class.", "dae7347b9b97efbb064c1ed9439d7d5e": "Three ways to define an object type", "dbb0fd385ec724573219f4e84073c9fd": "Allow us to control the mutability and visibility of class fields.", "a87ace6d58450ce540a351af2d44e253": "Jump into sample for this" } } };
+
+
+		// Use local fonts
+		SLConfig.fonts_url = 'lib/fonts/';
+	</script>
+
+	<script src="lib/reveal.js"></script>
+	<script src="lib/reveal-plugins.js"></script>
+	<script src="lib/offline.js"></script>
+
+	<!-- Initialize the presentation -->
+	<script>
+		Reveal.initialize({
+			width: 1280,
+			height: 720,
+			margin: 0.05,
+
+
+			hash: true,
+			controls: true,
+			progress: true,
+			mouseWheel: false,
+			showNotes: false,
+			slideNumber: false,
+			fragmentInURL: true,
+
+			autoSlide: 0,
+			autoSlideStoppable: true,
+
+			autoAnimateMatcher: SL.deck.AutoAnimate.matcher,
+
+			scrollActivationWidth: null,
+
+			center: false,
+			shuffle: false,
+			loop: false,
+			rtl: false,
+			navigationMode: "default",
+
+			transition: "slide",
+			backgroundTransition: "slide",
+
+			highlight: {
+				escapeHTML: false
+			},
+
+			plugins: [RevealZoom, RevealNotes, RevealMarkdown, RevealHighlight]
+		});
+	</script>
+
+
+
+
+</body>
+
+</html>
