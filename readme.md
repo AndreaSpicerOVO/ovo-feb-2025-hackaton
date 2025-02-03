@@ -8,15 +8,16 @@
 - [Miro link](https://miro.com/app/board/uXjVLlp0XFg=/?share_link_id=386119247904)
 - [Feedback link]()
 
+We'll add to this repo over time but this is for today.
+
 ## Timings:
 
-- 9:30-11:00 Session 1
-- 11:00-11:15 Coffee Break
-- 11:15-12:45 Session 2
-- 12:45-1:45 Lunch Break
-- 1:45-3:15 Session 3
-- 3:15-3:30 Tea Break
-- 3:30-4:30 Session 4
+
+					|               |           |
+					| ------------- | --------- |
+					| Starting | 11.00am (10.00am other days) |
+					| Lunch | 1.00pm |
+					| Finish | 4pm (but maybe 5pm today?) |
 
 ## Outline
 
@@ -25,3 +26,5 @@
 - Day 3: Streams and Asynchronous Programming
 - Day 4: Introduction to Deno 2.0 
 - Day 5: Full-Stack TypeScript, Deno, and Node.js Hackathon Day!
+
+
