@@ -1,0 +1,10 @@
+- Understanding Error Handling
+  - Error Propagation
+    - Handling errors in synchronous vs. asynchronous code.
+    - Properly propagating errors through promise chains.
+  - Custom Error Classes
+    - Creating an error hierarchy.
+    - Adding metadata to errors for improved debugging.
+  - Debugging Techniques
+    - Using VS Code for breakpoints and inspection.
+    - Source maps and stack traces for debugging TypeScript.

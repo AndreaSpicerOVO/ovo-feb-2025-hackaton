@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="sl-root decks export offline loaded">
+
+<head>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, minimal-ui">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="manifest"
+		href='data:application/manifest+json,{"display": "standalone", "name": "Intro to TypeScript course"}' />
+	<title>Intro to TypeScript course</title>
+
+
+	<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+</head>
+
+<body class="reveal-viewport theme-font-montserrat theme-color-sand-blue">
+	<div class="reveal">
+		<div class="slides">
+			<section data-id="6b6d57cbc748b8216dcec6600f14208d">
+				<div class="sl-block" data-block-type="text" style="width: 1134.32px; left: 72.84px; top: 195px; height: auto;"
+					data-block-id="cf9f66a0c5ebab85c24ab623d706b5cc">
+					<div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text"
+						style="z-index: 10; border-style: dashed; border-width: 8px; border-radius: 50px; line-height: 1.56; border-color: rgb(49, 120, 198); padding: 40px;"
+						data-has-line-height="">
+						<h1><span style="color:#2F4F4F">
+								Debugging TypeScript</span></h1>
+					</div>
+				</div>
+			</section>
+			<section data-id="cd49fc4bf406d3c5f63cadb21b939895">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 147.5px; height: auto;"
+					data-block-id="ec65ca2925b8203fa830fb01a6571cfa">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Type Errors</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 258.5px; height: auto;"
+					data-block-id="0705daed6f0966a3125dae8511f4cdab">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<ul>
+							<li class="fragment" data-fragment-index="0">Read complex error messages from the bottom up.</li>
+							<li class="fragment" data-fragment-index="1">Look up errors by their code at <a
+									href="https://typescript.tv/errors/" target="_blank">https://typescript.tv/errors/</a>
+							</li>
+							<li class="fragment" data-fragment-index="2">
+								<strong>Tip:</strong> 'Restart TS Server' command in Visual Studio Code (when you have a TypeScript file
+								open)
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section data-id="5733b5b6f151033fafbc9b502e433de0">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 78.6486px; height: auto;"
+					data-block-id="9030f151a9371256a3748a87267efe22">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; text-align: left; color: rgb(0, 0, 0); line-height: 1.95;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">Debugging TypeScript</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text"
+					style="width: 1087.71px; left: 102.5px; top: 299.123px; height: auto;"
+					data-block-id="bf28a129955aaf22d6392ca464d992c3">
+					<div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; text-align: left; line-height: 1.95; color: rgb(0, 0, 0);" data-has-line-height=""
+						data-fragment-index="0">
+						<p>
+							<code><strong><span style="color:#008000">// @ts-ignore</span></strong>         Suppress any type errors on next line.</code>
+						</p>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 169.523px; height: auto;"
+					data-block-id="1f4d4ce0a84c45e79cab39a4353d5890" data-name="text-6c1c0e">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 12; text-align: left; line-height: 2.6; color: rgb(0, 0, 0);" data-has-line-height="">
+						<h3>Comment directives</h3>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text"
+					style="width: 1099.36px; left: 102.5px; top: 399.123px; height: auto;"
+					data-block-id="03142a9d399d1c176a710caf7531e886" data-name="text-3ce725">
+					<div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 13; text-align: left; line-height: 1.95; color: rgb(0, 0, 0);" data-has-line-height=""
+						data-fragment-index="1">
+						<p>
+							<code><span style="color:#008000"><strong>// @ts-expect-error</strong></span>   Error if next line doesn't have error.</code>
+						</p>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 499.123px; height: auto;"
+					data-block-id="5771d9237b5ed069f887f3abc181733f" data-name="text-42aef7">
+					<div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 14; text-align: left; line-height: 1.95; color: rgb(0, 0, 0);" data-has-line-height=""
+						data-fragment-index="2">
+						<p>
+							<code><span style="color:#008000"><strong>// @ts-nocheck</strong></span>        Disable type checking for a file.</code>
+						</p>
+					</div>
+				</div>
+			</section>
+			<section data-id="81cb24cdfc986020375358dc4e46dcd3">
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 186.5px; height: auto;"
+					data-block-id="b597079cff8b3a28f11773de2884d054">
+					<div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text"
+						style="z-index: 10; line-height: 1.95; text-align: left;" data-has-line-height="">
+						<h2><span style="color:#2F4F4F">VS Code Extensions</span></h2>
+					</div>
+				</div>
+				<div class="sl-block" data-block-type="text" style="width: 1075px; left: 102.5px; top: 297.5px; height: auto;"
+					data-block-id="f9d4e09c2b8dba3a80fe6566ba1a0f0b">
+					<div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text"
+						style="z-index: 11; line-height: 2.6; text-align: left;" data-has-line-height="">
+						<ul>
+							<li><a href="https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors"
+									target="_blank">Pretty TypeScript Errors VSCode Extension</a></li>
+							<li><a href="https://www.totaltypescript.com/vscode-extension" target="_blank">Total TypeScript VSCode
+									Extension </a></li>
+							<li><a href="https://marketplace.visualstudio.com/items?itemName=Orta.vscode-twoslash-queries"
+									target="_blank">Twoslash Query Comments VSCode extension</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+		</div>
+	</div>
+
+	<script>
+		var SLConfig = { "deck": { "id": 3158639, "slug": "intro-to-typescript-course", "title": "Intro to TypeScript course", "description": "", "width": 1280, "height": 720, "margin": 0.05, "visibility": "self", "published_at": null, "sanitize_messages": null, "thumbnail_url": "https://s3.amazonaws.com/media-p.slid.es/thumbnails/ec1ff600dc84eb6b782205e2a84eb154/thumb.jpg?1712082399", "view_count": 0, "user": { "id": 2686425, "username": "simonplend", "name": null, "description": null, "thumbnail_url": "https://www.gravatar.com/avatar/0eb11842806f99bbd6698679ffb049b6?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png", "account_type": "lite", "team_id": null, "settings": { "id": 57293705, "present_controls": true, "present_upsizing": true, "present_pointer": false, "present_notes": true, "default_deck_tag_id": null } }, "background_transition": "slide", "transition": "slide", "theme_id": null, "theme_font": "montserrat", "theme_color": "sand-blue", "auto_slide_interval": 0, "comments_enabled": false, "forking_enabled": false, "rolling_links": false, "center": false, "shuffle": false, "should_loop": false, "share_notes": false, "slide_number": false, "slide_count": 49, "rtl": false, "version": 2, "collaborative": null, "deck_user_editor_limit": 1, "data_updated_at": 1724094492294, "font_typekit": null, "font_google": null, "time_limit": 20, "navigation_mode": "default", "upsizing_enabled": true, "language": "en", "notes": { "df1a00714680956beb7da1275e7f10d6": "- Learn what TypeScript is, how it works, and how to use it\n- Dive deeper into features of TypeScript\n- Remix, reuse and combine types", "ca3a6e325d0f334976b23c5c3c22ca51": "- Type declarations in packages in node_modules\n- TypeScript compiler automatically discovers and applies package type declarations", "0ad0ab9d57c7249ec436ca41cf037d39": "- Tools that compile and run don't output JS, handle everything internally.\n- Most tools which compile TS and run the resulting JS code do not perform type-checking. Keeps things fast when compiling.", "e55377d45fbd617fd3e72389151a012c": "Interfaces in TypeScript have nothing to do with class interfaces.", "4c8b2113b4064d418254da4ac30a096e": "Can make all props in an object type readonly with `Readonly` utility type, but will cover this later.", "8eb3917e35a85abfe5e5032e1aa9de15": "The square bracket syntax Type[] is the syntax used in TS docs and errors, we'll be using that syntax in this class. In genera can use whichever syntax you prefer.", "500bd6b132a6b5582980838ef344ae13": "\"Generic\" is not a noun, it's an adjective in this context.", "660d3742cfece52dea3c31034db2fadf": "Mostly going to focus on generic functions in this class.", "dae7347b9b97efbb064c1ed9439d7d5e": "Three ways to define an object type", "dbb0fd385ec724573219f4e84073c9fd": "Allow us to control the mutability and visibility of class fields.", "a87ace6d58450ce540a351af2d44e253": "Jump into sample for this" } } };
+
+
+		// Use local fonts
+		SLConfig.fonts_url = 'lib/fonts/';
+	</script>
+
+	<script src="lib/reveal.js"></script>
+	<script src="lib/reveal-plugins.js"></script>
+	<script src="lib/offline.js"></script>
+
+	<!-- Initialize the presentation -->
+	<script>
+		Reveal.initialize({
+			width: 1280,
+			height: 720,
+			margin: 0.05,
+
+
+			hash: true,
+			controls: true,
+			progress: true,
+			mouseWheel: false,
+			showNotes: false,
+			slideNumber: false,
+			fragmentInURL: true,
+
+			autoSlide: 0,
+			autoSlideStoppable: true,
+
+			autoAnimateMatcher: SL.deck.AutoAnimate.matcher,
+
+			scrollActivationWidth: null,
+
+			center: false,
+			shuffle: false,
+			loop: false,
+			rtl: false,
+			navigationMode: "default",
+
+			transition: "slide",
+			backgroundTransition: "slide",
+
+			highlight: {
+				escapeHTML: false
+			},
+
+			plugins: [RevealZoom, RevealNotes, RevealMarkdown, RevealHighlight]
+		});
+	</script>
+
+
+
+
+</body>
+
+</html>

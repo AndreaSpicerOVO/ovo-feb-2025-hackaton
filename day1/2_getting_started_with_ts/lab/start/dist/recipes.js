@@ -1,32 +1,17 @@
+"use strict";
 // -- START --
-
-type Recipe = {
-  name: string;
-  for: string;
-  vegetarian: boolean;
-  timings?: {
-    prep: number;
-    cook: number;
-    total: number;
-  } | null;
-  ingredients?: Array<string>;
-  steps?: Array<string>;
-};
-
-const recipe1: Recipe = {
+Object.defineProperty(exports, "__esModule", { value: true });
+const recipe1 = {
   name: "Pancakes",
   for: "breakfast",
   vegetarian: true,
 };
-
-const recipe2: Recipe = {
+const recipe2 = {
   name: "Spaghetti Bolognese",
   for: "dinner",
   vegetarian: false,
 };
-
 // -- Recipe ingredients and steps --
-
 recipe1.ingredients = [
   "1 cup flour",
   "1 cup milk",
@@ -35,7 +20,6 @@ recipe1.ingredients = [
   "1 tbsp baking powder",
   "1 tsp salt",
 ];
-
 recipe1.steps = [
   "Mix dry ingredients",
   "Add wet ingredients",
@@ -44,7 +28,6 @@ recipe1.steps = [
   "Flip and cook for another minute",
   "Serve with butter and syrup",
 ];
-
 recipe2.ingredients = [
   "1 lb spaghetti",
   "1 jar marinara sauce",
@@ -54,7 +37,6 @@ recipe2.ingredients = [
   "1 tsp salt",
   "1 tsp pepper",
 ];
-
 recipe2.steps = [
   "Cook spaghetti according to package directions",
   "Brown ground beef in a large skillet",
@@ -63,9 +45,8 @@ recipe2.steps = [
   "Simmer for 10 minutes",
   "Serve over spaghetti",
 ];
-
+console.log("Hello");
 // -- Recipe timings --
-
 recipe1.timings =
   Math.random() > 0.5
     ? null
@@ -74,20 +55,11 @@ recipe1.timings =
         cook: 2,
         total: 3,
       };
-
 recipe2.timings = null;
-
 // if (!recipe1.timings) {
-//   throw new Error();
+//     throw new Error();
 // }
-
-// recipe1.timings.cook;
-// -- Display recipes --
-
-type Recipes = Recipe[];
-
-const recipes: Recipes = [recipe1, recipe2];
-
+const recipes = [recipe1, recipe2];
 for (const recipe of recipes) {
   console.log(recipe.name);
   console.log("For: " + recipe.for);
@@ -105,3 +77,4 @@ for (const recipe of recipes) {
   console.log("Steps: " + recipe.steps?.join(", "));
   console.log("----");
 }
+//# sourceMappingURL=recipes.js.map

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Slide: Workshop Introduction -->
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+						### Error Handling in Node.js
+		
+				
+			
+						Note:
+						- Recap previous section to establish the foundation.
+						- Emphasize the workshop's goal: understanding and managing errors effectively.
+						- Define errors as interruptions in expected program flow, designed to signal issues.
+					</textarea>
+			</section>
+
+			<!-- Slide: Understanding Errors -->
+			<section>
+				<section data-markdown data-separator-notes="^Note:">
+					<textarea data-template>
+							#### Understanding Errors
+							<ul>
+								<li class="fragment">**Operational Errors**:
+									<ul>
+										<li class="fragment">Examples: network failures, file not found, invalid user input.</li>
+										<li class="fragment">Strategies: retry operations, user feedback, graceful degradation.</li>
+									</ul>
+								</li>
+								<li class="fragment">**Developer Errors**:
+									<ul>
+										<li class="fragment">Examples: type errors, syntax errors, logic errors.</li>
+										<li class="fragment">Fail fast and provide informative messages.</li>
+									</ul>
+								</li>
+							</ul>
+							Note:
+							- Operational Errors: Recoverable, originate from external factors.
+							- Developer Errors: Internal bugs, should trigger immediate fixes.
+						</textarea>
+				</section>
+
+			</section>
+
+			<!-- Slide: Creating and Identifying Errors -->
+			<section>
+				<section data-markdown data-separator-notes="^Note:">
+					<textarea data-template>
+							#### Creating and Identifying Errors 
+		
+							<ul>
+								<li class="fragment">**Throwing Errors**:
+									<ul>
+										<li class="fragment">Use `throw` to signal errors in program logic.</li>
+									</ul>
+								</li>
+								<li class="fragment">**Native Error Constructors**:
+									<ul>
+										<li class="fragment">Built-in types: `Error`, `TypeError`, `SyntaxError`, etc.</li>
+									</ul>
+								</li>
+								<li class="fragment">**Custom Errors**:
+									<ul>
+										<li class="fragment">Create error classes for better specificity.</li>
+									</ul>
+								</li>
+							</ul>
+							Note:
+							- Explain the distinction between built-in and custom errors.
+							- Encourage clear error messages to aid debugging.
+						</textarea>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<textarea data-template>
+							#### Code Example: Custom Errors
+		
+							```javascript
+							class ValidationError extends Error {
+								constructor(message) {
+									super(message);
+									this.name = 'ValidationError';
+								}
+							}
+		
+							function validateEmail(email) {
+								const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+								if (!regex.test(email)) {
+									throw new ValidationError('Invalid email format.');
+								}
+							}
+		
+							try {
+								validateEmail('not-an-email');
+							} catch (error) {
+								console.error(error.name, error.message); // ValidationError: Invalid email format.
+							}
+							```
+		
+							Note:
+							- Demonstrates creating a custom error class.
+							- Highlights the use of class inheritance for error specificity.
+						</textarea>
+				</section>
+			</section>
+
+			<!-- Slide: Intercepting Errors -->
+			<section>
+				<section data-markdown data-separator-notes="^Note:">
+					<textarea data-template>
+							#### Intercepting Errors 
+		
+							<ul>
+								<li class="fragment">**Try/Catch Blocks**:
+									<ul>
+										<li class="fragment">Handle synchronous errors.</li>
+									</ul>
+								</li>
+								<li class="fragment">**Promise Rejections**:
+									<ul>
+										<li class="fragment">Use `.catch()` for promise chains.</li>
+									</ul>
+								</li>
+								<li class="fragment">**Async/Await Try/Catch**:
+									<ul>
+										<li class="fragment">Trap errors in async functions.</li>
+									</ul>
+								</li>
+							</ul>
+							Note:
+							- Different techniques for error interception based on code type.
+							- Synchronous vs asynchronous error handling distinctions.
+						</textarea>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<textarea data-template>
+							#### Code Example: Async/Await
+		
+							```javascript
+							async function fetchData() {
+								try {
+									const response = await fetch('https://api.example.com/data');
+									const data = await response.json();
+									console.log(data);
+								} catch (error) {
+									console.error('Error fetching data:', error.message);
+								}
+							}
+							fetchData();
+							```
+		
+							Note:
+							- Demonstrates proper handling of errors in async/await syntax.
+							- Highlights the importance of wrapping async operations in `try/catch`.
+						</textarea>
+				</section>
+			</section>
+
+			<!-- Slide: Error Propagation -->
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+						#### Error Propagation 
+						<ul>
+							<li class="fragment">**Synchronous**:
+								<ul>
+									<li class="fragment">Errors bubble up the call stack until caught.</li>
+								</ul>
+							</li>
+							<li class="fragment">**Asynchronous**:
+								<ul>
+									<li class="fragment">Promises reject errors that must be explicitly caught.</li>
+								</ul>
+							</li>
+						</ul>
+						Note:
+						- Explain how unhandled errors crash the program.
+						- Demonstrate best practices for allowing errors to propagate or handling them locally.
+					</textarea>
+			</section>
+
+			<!-- Slide: Conclusion -->
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+						#### Conclusion
+		
+						- Recap key takeaways.
+						- Discuss why error handling is critical for robust applications.
+						- Provide resources for further learning.
+		
+						Note:
+						- Reinforce concepts learned in the workshop.
+						- Suggest further reading or tools (e.g., error monitoring services).
+					</textarea>
+			</section>
+		</div>
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
