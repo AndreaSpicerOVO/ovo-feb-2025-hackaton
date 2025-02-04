@@ -2,6 +2,15 @@
 
 > **Part 2: Section 4: Generics**
 
+### Before you start:
+
+Run the following to install the types for Node and the tsconfig base:
+
+```bash
+npm install -D @types/node @total-typescript/tsconfig 
+```
+
+
 ## Requirements
 
 1. Implement the `ValidAirport` object type. It should have all the properties of

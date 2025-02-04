@@ -3,7 +3,7 @@
   type CloudProvider = {
     name: string;
     // [keys: string]: string | number | boolean;
-  } & Record<ValidKeys, string | number | boolean>;
+  } & Partial<Record<ValidKeys, string | number | boolean>>;
 
   const provider1: CloudProvider = {
     name: "AWS",

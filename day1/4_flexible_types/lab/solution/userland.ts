@@ -10,7 +10,19 @@ interface DetailedUserProfile extends UserProfile {
   [key: string]: UserProfileValue;
 }
 
-const userProfile: DetailedUserProfile = {
+type UserProfileGenerator = () => UserProfile;
+
+const userProfile: UserProfileGenerator = (): UserProfile => {
+  return {
+    username: "avani.acharya",
+    email: "avani.acharya@theinternet.com",
+    premiumMember: true,
+    age: 30,
+    country: "India",
+  };
+};
+
+const userProlfe1: UserProfile = {
   username: "avani.acharya",
   email: "avani.acharya@theinternet.com",
   premiumMember: true,
@@ -56,3 +68,7 @@ for (const profile of userProfiles) {
 
   console.log(updatedProfile);
 }
+
+userProfiles.forEach((profile) => {});
+
+userProfiles.map((profile) => updateProfile(profile, "name", "John"));

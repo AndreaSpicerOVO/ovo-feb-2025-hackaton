@@ -5,11 +5,13 @@
  *
  *   QUESTION Answer: ANSWER
  */
-function formatMusicTrivia(question, answer) {}
+function formatMusicTrivia(question: string, answer: string): string {
+  return `${question} Answer: ${answer}`;
+}
 
 console.log(
   formatMusicTrivia(
-    'What was the first music video aired on MTV?',
+    "What was the first music video aired on MTV?",
     "'Video Killed the Radio Star' by The Buggles"
   )
 );
@@ -23,14 +25,14 @@ console.log(
 
 console.log(
   formatMusicTrivia(
-    'In what year was the first song ever sung in a movie?',
+    "In what year was the first song ever sung in a movie?",
     1927
   )
 );
 
 console.log(
   formatMusicTrivia(
-    'What was the first CD ever pressed?',
+    "What was the first CD ever pressed?",
     "'The Visitors' by ABBA"
   )
 );

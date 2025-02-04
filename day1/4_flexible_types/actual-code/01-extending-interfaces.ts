@@ -10,7 +10,8 @@ const currencyExample = {
 };
 
 interface CountryWithCurrency extends Country {
-  currency: { name: string };
+  currency: typeof currencyExample;
+  describe: () => string;
 }
 
 const country1: Country = {
@@ -21,3 +22,5 @@ const country1: Country = {
     name: "Lion's tears",
   },
 };
+
+class LukeError extends Error {}
