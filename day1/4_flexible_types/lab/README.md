@@ -4,6 +4,13 @@
 
 Your challenge is to create interfaces which allow for detailed user profiles with dynamic object keys.
 
+### Before you start:
+
+Run the following to install the types for Node and the tsconfig base:
+
+```bash
+npm install -D @types/node @total-typescript/tsconfig 
+```
 ## Requirements
 
 1. **Create an interface for user profiles.** It should allow for the `username`, `email` and `premiumMember` properties in the `userProfile` object.

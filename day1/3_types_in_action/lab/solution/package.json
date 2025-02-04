@@ -2,5 +2,12 @@
   "name": "02-types-in-action-lab-solution",
   "dependencies": {
     "@total-typescript/tsconfig": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1"
+  },
+  "scripts": {
+    "dev": "tsx --watch music-trivia.ts"
   }
+
 }
