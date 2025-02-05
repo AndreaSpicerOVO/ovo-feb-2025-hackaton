@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<!-- Slide: Workshop Introduction -->
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					# Using buffers and streams
+						</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+		# What is a buffer?
+		<ul>
+			<li class="fragment">Most APIs in Node operate in <strong>buffer mode</strong> by default.</li>
+			<li class="fragment">In buffer mode:
+				<ul>
+					<li class="fragment">Input operations collect all incoming data into a <strong>buffer</strong>.</li>
+					<li class="fragment">The operation completes once all data is collected.</li>
+					<li class="fragment">The entire data is passed back to the caller as a <strong>single blob</strong>.</li>
+				</ul>
+			</li>
+		</ul>
+		
+	</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## The Buffer Instance
+
+					<ul>
+						<li class="fragment">When it was first introduced to Node, JS didn't have a native binary type.</li>
+						<li class="fragment">We now have <strong>ArrayBuffer</strong> and a number of <strong>Typed Arrays</strong> to provide different "views" of a buffer.</li>
+						<li class="fragment">Full list of these on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">MDN</a>.</li>
+						<li class="fragment">When these new structures were added to JS, the <code>Buffer</code> constructor internals were refactored.</li>
+						<li class="fragment">A buffer object is both an instance of <code>Buffer</code> and an instance of <code>Uint8Array</code>.</li>
+						<li class="fragment">This means we can use the full API of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array">Uint8Array</a> as well as the <a href="https://nodejs.org/dist/latest-v12.x/docs/api/buffer.html">Buffer methods</a>.</li>
+					</ul>
+				</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					> You'll rarely need to allocate a buffer but if you do, don't use the new keyword with Buffer constructor.
+					<ul>
+						<li class="fragment">The correct way to allocate a buffer of a certain amount of bytes is:
+							<pre class="fragment"><code>const buffer = Buffer.alloc(10)</code></pre>
+						</li>
+						<li class="fragment">This is the <strong>safe</strong> way to allocate buffers - the <strong>unsafe</strong> way is:
+							<pre class="fragment"><code>const buffer = Buffer.allocUnsafe(10)</code></pre>
+						</li>
+					</ul>
+
+				</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Converting String to Buffers
+					<ul>
+						<li class="fragment">You can create a buffer from a string:
+							<pre class="fragment"><code>const buffer = Buffer.from("This is a string.")</code></pre>
+						</li>
+						<li class="fragment">By default, the encoding is <strong>UTF-8</strong>. Be mindful of string lengths!</li>
+						<li class="fragment">You can specify the encoding explicitly:
+							<pre class="fragment"><code>const buffer = Buffer.from("This is a string", "utf16le")</code></pre>
+						</li>
+						<li class="fragment">Supported encodings include <strong>hex</strong> and <strong>base64</strong>. These are useful for representing data as strings for safe transmission across the wire.</li>
+					</ul>
+					
+				</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Converting Buffers to Strings
+					<ul>
+						<li class="fragment">Convert a buffer to a string using the <code>toString</code> method on a <code>Buffer</code> instance.</li>
+						<pre class="fragment"><code>const value = someBuffer.toString()</code></pre>
+						<li class="fragment">Ensure the same encoding method is used for decoding as was used for encoding.</li>
+						<pre class="fragment"><code>const value = someBuffer.toString("utf8")</code></pre>
+						<li class="fragment">UTF-8 characters can require 1-4 bytes. Truncated bytes may cause encoding errors.</li>
+						<li class="fragment">For handling multiple buffers that might split characters across byte boundaries, use the Node core <code>string_decoder</code> module.</li>
+					</ul>
+				</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## JSON Serializing and Deserializing Buffers
+
+
+When JSON.stringify encounters any object it will attempt to call a toJSON method on that object if it exists. 
+
+The Buffer `toJSON` method returns a JS object to represent the Buffer in a JSON-friendly way.
+
+				</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Streams
+					<ul>
+						<li class="fragment">Motto in the community: <strong>"stream all the things"</strong></li>
+						<li class="fragment">Described as <strong>"Node's best and most misunderstood idea"</strong></li>
+						<li class="fragment">Streams offer:
+							<ul>
+								<li class="fragment">Performance and efficiency through technical properties</li>
+								<li class="fragment">Elegance in fitting the Node.js philosophy</li>
+							</ul>
+						</li>
+						<li class="fragment">Streams enable processing data as it arrives:
+							<ul>
+								<li class="fragment">Data is passed to the consumer immediately upon receipt.</li>
+								<li class="fragment">The consumer can process data immediately or wait until it's fully received.</li>
+							</ul>
+						</li>
+					</ul>
+				</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Spacial efficiency
+					<ul>
+						<li class="fragment">Streams enable processing data without buffering it all at once.</li>
+						<li class="fragment">Useful for handling large files or huge responses efficiently.</li>
+						<li class="fragment">Avoids issues like running out of memory when buffering several GBs of data.</li>
+					</ul>
+					
+				</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Time efficiency
+					<ul>
+						<li class="fragment"><strong>Scenario</strong>: An app compresses a file, uploads it to a server, decompresses it, and saves it to the file system.</li>
+						<li class="fragment">Using a <strong>buffered API</strong>:
+							<ul>
+								<li class="fragment">The upload starts <strong>only after</strong>the entire file is read and compressed.</li>
+								<li class="fragment">This approach is slower and less efficient.</li>
+							</ul>
+						</li>
+						<li class="fragment">Using <strong>streams</strong>:
+							<ul>
+								<li class="fragment">The client streams compressed chunks <strong>as they are read</strong>.</li>
+								<li class="fragment">The server decompresses chunks <strong>as they are received</strong>.</li>
+								<li class="fragment">Both processes happen concurrently, improving <strong>time efficiency</strong>.</li>
+							</ul>
+						</li>
+					</ul>
+					
+				</textarea>
+			</section>
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Composability
+					<ul>
+						<li class="fragment">Streams can be composed using the <code>.pipe()</code> method to build pipelines.</li>
+						<li class="fragment">Each unit in the pipeline handles a single responsibility.</li>
+						<li class="fragment">This works because:
+							<ul>
+								<li class="fragment">Streams have a <strong>uniform interface</strong>.</li>
+								<li class="fragment">Streams understand each other's APIs.</li>
+							</ul>
+						</li>
+						<li class="fragment">Prerequisite:
+							<ul>
+								<li class="fragment">The next stream in the pipeline must support the data type produced by the previous stream.</li>
+							</ul>
+						</li>
+						<li class="fragment">Example:
+							<ul>
+								<li class="fragment">Easily add <strong>encryption</strong> to a stream pipeline before uploading or processing data.</li>
+							</ul>
+						</li>
+					</ul>
+					
+				</textarea>
+			</section>
+			<section>
+				<h2>Types of Streams</h2>
+				<ul>
+					<li class="fragment">
+						<strong>Readable Streams:</strong> Streams you can read data from.
+						<ul>
+							<li class="fragment">Examples: HTTP requests, file reads.</li>
+						</ul>
+					</li>
+					<li class="fragment">
+						<strong>Writable Streams:</strong> Streams you can write data to.
+						<ul>
+							<li class="fragment">Examples: HTTP responses, file writes.</li>
+						</ul>
+					</li>
+					<li class="fragment">
+						<strong>Duplex Streams:</strong> Streams that are both readable and writable.
+						<ul>
+							<li class="fragment">Examples: Sockets, network communications.</li>
+						</ul>
+					</li>
+					<li class="fragment">
+						<strong>Transform Streams:</strong> Streams that modify or transform data as it passes through.
+						<ul>
+							<li class="fragment">Examples: Data compression, encryption.</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<section>
+
+					<h2>Understanding Backpressure</h2>
+					<ul>
+						<li class="fragment">Backpressure occurs when:
+							<ul>
+								<li class="fragment">The <strong>readable stream</strong> produces data faster than the <strong>writable
+										stream</strong> can
+									consume.</li>
+							</ul>
+						</li>
+						<li class="fragment">Key issues with unhandled backpressure:
+							<ul>
+								<li class="fragment">Excessive buffering in memory.</li>
+								<li class="fragment">Increased latency.</li>
+								<li class="fragment">Potential data loss.</li>
+							</ul>
+						</li>
+				</section>
+				<section>
+					<h2>Automatic Handling</h2>
+					<ul>
+						<li class="fragment">Node.js streams handle backpressure <strong>automatically</strong> with
+							<code>.pipe()</code>.
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Manual Handing</h2>
+					<ul>
+						<li class="fragment">When using stream event handlers, developers must explicitly handle backpressure.
+						</li>
+						<li class="fragment">Use the return value of <code>writable.write(chunk)</code> to check if the
+							destination can accept more data.</li>
+					</ul>
+				</section>
+				</textarea>
+			</section>
+			<section>
+				<section>
+					<h2>Error Handling and Graceful Shutdowns</h2>
+					<h3>Why Handle Errors?</h3>
+					<ul>
+						<li class="fragment">Ensure application stability.</li>
+						<li class="fragment">Prevent crashes from unhandled exceptions.</li>
+						<li class="fragment">Provide informative feedback for debugging.</li>
+					</ul>
+					</li>
+				</section>
+				<section>
+					<h2>Key Strategies</h2>
+					<ul>
+						<li class="fragment">Listen for <code>'error'</code> events on streams.</li>
+						<li class="fragment">Implement fallback mechanisms or retries.</li>
+						<li class="fragment">Clean up resources to avoid memory leaks.</li>
+					</ul>
+					</li>
+				</section>
+				<section>
+					<h2>Graceful Shutdown</h2>
+					<ul>
+						<li class="fragment">Handle <code>'close'</code> and <code>'end'</code> events properly.</li>
+						<li class="fragment">Ensure resources like file descriptors are released.</li>
+						<li class="fragment">Terminate processes cleanly using signals like <code>SIGINT</code>.</li>
+					</ul>
+				</section>
+
+			</section>
+
+		</div>
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>

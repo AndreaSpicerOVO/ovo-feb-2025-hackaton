@@ -2,6 +2,6 @@
   "name": "06-debugging-typescript-lab-solution",
   "type": "module",
   "devDependencies": {
-    "@types/node": "^22.4.0"
+    "@types/node": "^22.13.1"
   }
 }

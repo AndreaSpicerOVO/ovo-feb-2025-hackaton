@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Node.js and Asynchronous Control Flow
+					<ul>
+						<li class="fragment">JavaScript is event-driven and non-sequential.</li>
+						<li class="fragment">Code execution can pause and resume upon task completion.</li>
+						<li class="fragment">Key example: `setTimeout` schedules and executes tasks.</li>
+						<li class="fragment">Node.js uses this model for all asynchronous I/O operations.</li>
+						<li class="fragment">Focus: Understanding control flow patterns in Node.js.</li>
+					</ul>
+				</textarea>
+			</section>
+
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Callbacks Overview
+					<ul>
+						<li class="fragment">A callback is a function executed after a task completes.</li>
+						<li class="fragment">Used extensively before the introduction of promises and async/await.</li>
+						<li class="fragment">Example: Reading a file asynchronously with a callback.</li>
+					</ul>
+				</textarea>
+			</section>
+
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Callback Patterns
+					<ul>
+						<li class="fragment">Error-first convention: `(err, result)`</li>
+						<li class="fragment">Serial execution: Nest callbacks to ensure order.</li>
+						<li class="fragment">Parallel execution: Call all operations without nesting.</li>
+					</ul>
+				</textarea>
+			</section>
+
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Challenges with Callbacks
+					<ul>
+						<li class="fragment">Nesting callbacks leads to "callback hell."</li>
+						<li class="fragment">Difficult to read and maintain code.</li>
+						<li class="fragment">Error handling becomes complex.</li>
+						<li class="fragment">Solution: Promises and async/await.</li>
+					</ul>
+				</textarea>
+			</section>
+
+			<!-- Slide 7: Promises Overview -->
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Promises Overview
+					<ul>
+						<li class="fragment">An object representing an asynchronous operation.</li>
+						<li class="fragment">States: pending, resolved, rejected.</li>
+						<li class="fragment">Methods: `.then()`, `.catch()`, and `.finally()`.</li>
+					</ul>
+				</textarea>
+			</section>
+
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Advantages of Promises
+					<ul>
+						<li class="fragment">Improves code readability.</li>
+						<li class="fragment">Supports chaining for sequential execution.</li>
+						<li class="fragment">Better error handling with `.catch()`.</li>
+					</ul>
+				</textarea>
+			</section>
+
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Async/Await Overview
+					<ul>
+						<li class="fragment">Keywords for asynchronous programming.</li>
+						<li class="fragment">`async`: Marks a function as asynchronous.</li>
+						<li class="fragment">`await`: Pauses execution until a promise resolves.</li>
+						<li class="fragment">Enables synchronous-looking asynchronous code.</li>
+					</ul>
+				</textarea>
+			</section>
+
+
+			<!-- Slide 12: Comparison: Callbacks, Promises, Async/Await -->
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Comparison: Callbacks, Promises, Async/Await
+					<ul>
+						<li class="fragment">Callbacks: Simple, but prone to nesting issues.</li>
+						<li class="fragment">Promises: Improves readability, supports chaining.</li>
+						<li class="fragment">Async/Await: Simplifies asynchronous code, reduces boilerplate.</li>
+					</ul>
+				</textarea>
+			</section>
+
+			<!-- Slide 13: Handling Errors -->
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Error Handling
+					<ul>
+						<li class="fragment">Callbacks: Check and handle `err` in each callback.</li>
+						<li class="fragment">Promises: Use `.catch()` for rejections.</li>
+						<li class="fragment">Async/Await: Use `try/catch` blocks for synchronous-like handling.</li>
+					</ul>
+				</textarea>
+			</section>
+
+			<!-- Slide 14: Canceling Async Operations -->
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Canceling Async Operations
+					<ul>
+						<li class="fragment">Use `AbortController` and `AbortSignal` for cancelation.</li>
+						<li class="fragment">Works with Node.js core APIs like `fs`, `stream`, and `http`.</li>
+						<li class="fragment">Enables graceful termination of ongoing operations.</li>
+					</ul>
+				</textarea>
+			</section>
+
+
+
+			<!-- Slide 16: Summary -->
+			<section data-markdown data-separator-notes="^Note:">
+				<textarea data-template>
+					## Summary
+					<ul>
+						<li class="fragment">Understand asynchronous patterns: Callbacks, Promises, Async/Await.</li>
+						<li class="fragment">Leverage Node.js APIs like `fs` and `stream` for practical applications.</li>
+						<li class="fragment">Handle errors and cancellations gracefully.</li>
+						<li class="fragment">Improve code clarity and maintainability with async/await.</li>
+					</ul>
+				</textarea>
+			</section>
+		</div>
+
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>

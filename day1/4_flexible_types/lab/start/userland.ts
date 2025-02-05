@@ -26,20 +26,33 @@ const userProfile: UserProfile = {
   },
 };
 
-function updateProfile(
+function updateProfile<K extends keyof UserProfile>(
   profile: UserProfile,
-  key: string,
-  value: string | number | boolean
+  key: K,
+  value: UserProfile[K]
 ) {
   const newProfile = structuredClone(profile);
-  if (key === "city" && typeof value === "string") {
-    newProfile["location"]["city"] = value;
-    return newProfile;
-  }
+  // if (key === "city" && typeof value === "string") {
+  //   newProfile["location"]["city"] = value;
+  //   return newProfile;
+  // }
   newProfile[key] = value;
   return newProfile;
 }
 
-console.log(updateProfile(userProfile, "city", "Bombay"));
+function updateProfileOld(
+  profile: UserProfile,
+  key: string,
+  value: string | boolean | number
+) {
+  const newProfile = { ...profile, [key]: value };
+  // if (key === "city" && typeof value === "string") {
+  //   newProfile["location"]["city"] = value;
+  //   return newProfile;
+  // }
+  // newProfile[key] = value;
+  return newProfile;
+}
+console.log(updateProfile(userProfile, "username", "Bombay"));
 
 console.log(userProfile);
