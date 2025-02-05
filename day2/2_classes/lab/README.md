@@ -1,7 +1,5 @@
 # Lab: Kanban ✅
 
-> **Part 2: Section 5: Classes**
-
 The CTO has asked you to build the data layer for a web based kanban board.
 That's right, it's time to build the _ultimate_ project management tool!
 
