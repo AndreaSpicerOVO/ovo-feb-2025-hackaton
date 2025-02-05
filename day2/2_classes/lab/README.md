@@ -7,6 +7,8 @@ That's right, it's time to build the _ultimate_ project management tool!
 
 ## Requirements
 
+`npm install @total-typescript/tsconfig`
+
 1. `cd` into the `part-02/05-classes/lab/start/` and run `npm run serve` to start the server for the kanban app.
 2. Open [`http://127.0.0.1:8000/`](http://127.0.0.1:8000/) in your web browser.
 3. Follow the instructions in `part-02/05-classes/lab/start/src/components/App.tsx`.
