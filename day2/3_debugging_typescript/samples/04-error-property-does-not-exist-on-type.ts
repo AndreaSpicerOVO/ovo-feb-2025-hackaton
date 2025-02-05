@@ -2,7 +2,7 @@
   type Person = {
     name: string;
     age: number;
-  }
+  };
 
   const person: Person = {
     name: "Alice",
@@ -21,7 +21,7 @@
     name: string;
     age: number;
     active: boolean;
-  }
+  };
 
   // Caveat: All properties must be initialized when creating the object.
   const person: Person = {
@@ -39,7 +39,7 @@
     name: string;
     age: number;
     active?: boolean;
-  }
+  };
 
   const person: Person = {
     name: "Alice",
@@ -71,8 +71,8 @@
     name: string;
     age: number;
     // Allows for properties with any name.
-    [key: string]: string | number | boolean;
-  }
+    [key: string]: string | number | boolean | string[] | number[] | boolean[];
+  };
 
   const person: Person = {
     name: "Alice",

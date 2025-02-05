@@ -1,3 +1,4 @@
+// @ts-nocheck
 // -- Variable type isn't compatible with function return type --
 {
   // -- Error --
@@ -31,7 +32,7 @@
     type Product = {
       id: number;
       name: string;
-    }
+    };
 
     // Error: Type 'number' is not assignable to type 'string'. TS2322.
     const item: Product = {
@@ -47,7 +48,7 @@
     type Product = {
       id: number;
       name: string;
-    }
+    };
 
     const item: Product = {
       id: 1,
@@ -66,13 +67,13 @@
       id: number;
       name: string;
       category: "home" | "office";
-    }
+    };
 
     const item: Product = {
       id: 1,
       name: "Plastic tree",
       // Error: Type '"hom"' is not assignable to type '"home" | "office"'. Did you mean '"home"'? TS2820.
-      category: "hom"
+      category: "hom",
     };
 
     console.log(item);
@@ -84,12 +85,12 @@
       id: number;
       name: string;
       category: "home" | "office";
-    }
+    };
 
     const item: Product = {
       id: 1,
       name: "Plastic tree",
-      category: "home"
+      category: "home",
     };
 
     console.log(item);

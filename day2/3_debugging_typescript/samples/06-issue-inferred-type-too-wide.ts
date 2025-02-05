@@ -11,7 +11,7 @@ function validate(schema: Schema, data: Record<string, any>) {
 
 // -- Error: Type 'string' is not assignable to type '"string" | "number" | "object"'. TS2345. --
 {
-  const schema = {
+  const schema: Readonly<Schema> = {
     type: "object",
     properties: {
       name: {
@@ -22,6 +22,8 @@ function validate(schema: Schema, data: Record<string, any>) {
       },
     },
   };
+
+  // schema.properties.name.type = "something else"
 
   validate(schema, {
     name: "Amar",

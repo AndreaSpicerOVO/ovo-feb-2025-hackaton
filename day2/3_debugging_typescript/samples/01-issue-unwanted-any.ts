@@ -15,13 +15,22 @@ function libraryFunction(): any {
 // --- Use a type assertion to improve type safety ---
 {
   const result = libraryFunction() as number;
+  const result1: number = libraryFunction();
 
   console.log(result.includes("hello"));
 }
 
 // --- Alternative type assertion syntax ---
 {
-  const result = <number>libraryFunction();
+  const result = <string>libraryFunction();
 
   console.log(result.includes("hello"));
+}
+
+{
+  const result = libraryFunction();
+
+  if (typeof result === "string") {
+    console.log(result.includes("hello"));
+  }
 }

@@ -53,6 +53,10 @@
   if (item !== null) {
     console.log(item.name);
   }
+  if (item === null) {
+    throw new Error();
+  }
+  item.name;
 }
 
 // -- Fix 3: Use the non-null assertion operator `!` (TypeScript language feature, unsafe) --
@@ -70,6 +74,12 @@
   }
 
   const item = getItemById(1);
+  const example = {
+    id: 1,
+    name: "Item 1",
+  };
+  type Item = typeof example;
 
   console.log(item!.name);
+  console.log((item as Item).name);
 }
