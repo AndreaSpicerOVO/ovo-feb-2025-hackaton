@@ -17,5 +17,5 @@ Content-Type: application/json
 
 {
 		"url": "https://deno.land",
-		"customId": "deno"
+		"customId": "my-deno"
 }

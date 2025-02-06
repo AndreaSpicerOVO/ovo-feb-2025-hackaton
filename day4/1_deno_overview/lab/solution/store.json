@@ -1,13 +1,21 @@
 {
   "bb0425": {
     "url": "https://deno.land",
-    "count": 4
+    "count": 5
   },
   "79915d": {
     "url": "https://deno.land",
     "count": 0
   },
   "deno": {
+    "url": "https://deno.land",
+    "count": 1
+  },
+  "e2d0bb": {
+    "url": "https://deno.land",
+    "count": 1
+  },
+  "my-deno": {
     "url": "https://deno.land",
     "count": 1
   }

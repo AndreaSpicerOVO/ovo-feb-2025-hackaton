@@ -154,7 +154,7 @@ We'll take our previous file system functions, wrap them in a module, and publis
 ---
 
 ### **🛠️ Step 1: Create the File System Utility Module**
-Inside your project folder (`deno-deps-lab`):
+Inside your project folder (`start`):
 
 1. **Create a new directory and module file:**
    ```bash

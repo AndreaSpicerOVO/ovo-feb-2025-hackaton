@@ -1,0 +1,31 @@
+GET http://localhost:4321
+
+###
+
+GET http://localhost:4321/api/v1/donuts
+
+###
+
+POST http://localhost:4321/api/v1/donuts
+content-type: application/json
+
+{
+	"name": "Jam Donut"
+}
+###
+
+GET http://localhost:4321/api/v1/donuts/0
+content-type: application/json
+
+###
+
+PUT http://localhost:4321/api/v1/donuts/0
+Content-Type: application/json
+
+{
+	"name": "Better donut"
+}
+
+###
+
+DELETE http://localhost:4321/api/v1/donuts/0
