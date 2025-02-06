@@ -1,4 +1,5 @@
-const port = 8080;
+const port = 8000;
+
 const store = new Map<string, { url: string; count: number }>();
 
 console.log(`Server running on http://localhost:${port}/`);
