@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown>
+				<textarea data-template data-auto-animate>
+					# Project and Dependency Management with Deno 
+			
+					- Understand Project Initialization in Deno
+					- Configure Imports and Tasks in `deno.json`
+					- Import Sources Across Ecosystems
+					- `deno.lock` to ensure deterministic dependencies
+					- Publishing and Sharing Deno Modules
+				</textarea>
+			</section>
+			<section>
+				<section>
+					<h2>Feature Comparison</h2>
+					<p>Comparing Node.js and Deno based on key features and design philosophies.</p>
+				</section>
+
+				<section>
+					<h2>Language Support</h2>
+					<p><strong>Node.js:</strong> JavaScript with TypeScript via transpilation.</p>
+					<p><strong>Deno:</strong> JavaScript & TypeScript natively, no setup required.</p>
+				</section>
+
+				<section>
+					<h2>Package Management</h2>
+					<p><strong>Node.js:</strong> Uses NPM and <code>package.json</code>.</p>
+					<p><strong>Deno:</strong> No package manager; imports modules via URLs.</p>
+				</section>
+
+				<section>
+					<h2>Security</h2>
+					<p><strong>Node.js:</strong> No built-in security; full system access by default.</p>
+					<p><strong>Deno:</strong> Secure by default; explicit permissions required for file, network, or environment
+						access.</p>
+				</section>
+
+				<section>
+					<h2>Standard Library</h2>
+					<p><strong>Node.js:</strong> Heavily relies on external modules for utilities.</p>
+					<p><strong>Deno:</strong> Comes with a built-in standard library for common tasks.</p>
+				</section>
+
+				<section>
+					<h2>Runtime Permissions</h2>
+					<p><strong>Node.js:</strong> No concept of runtime permissions.</p>
+					<p><strong>Deno:</strong> Permissions must be granted explicitly using flags (e.g.,
+						<code>--allow-net</code>, <code>--allow-read</code>).
+					</p>
+				</section>
+			</section>
+
+			<section data-markdown>
+				<textarea data-template data-auto-animate>
+					# Secure by Default
+			
+					- No file, network, or environment access without explicit permission.
+					- Permissions are granted via CLI flags:
+						- `--allow-net`
+						- `--allow-read`
+					- Examples:
+						```bash
+						# Allow network access
+						deno run --allow-net server.ts
+						# Allow file access
+						deno run --allow-read fileReader.ts
+						```
+				</textarea>
+			</section>
+			<section data-markdown>
+				<textarea data-template data-auto-animate>
+					# TypeScript in Deno
+			
+					- TypeScript is supported out of the box.
+					- No `tsconfig.json` or build tools needed.
+					- Importing modules:
+						```typescript
+						import { serve } from "https://deno.land/std@0.119.0/http/server.ts";
+			
+						serve((req) => new Response("Hello Deno"));
+						```
+					- Deno handles TypeScript and JavaScript natively, no setup required.
+				</textarea>
+			</section>
+			<section data-markdown>
+				<textarea data-template data-auto-animate>
+					# Lab: Deno Basics
+			
+					## Task 1: Install Deno
+					```bash
+					# macOS/Linux
+					curl -fsSL https://deno.land/install.sh | sh
+					# Windows (PowerShell)
+					iwr https://deno.land/install.ps1 -useb | iex
+					```
+			
+					## Task 2: Run a Simple Script
+					1. Create a file `hello.ts`:
+						```typescript
+						console.log("Hello, Deno!");
+						```
+					2. Run the script:
+						```bash
+						deno run hello.ts
+						```
+			
+					## Task 3: Use Permissions
+					1. Create a script `readFile.ts`:
+						```typescript
+						const decoder = new TextDecoder("utf-8");
+						const data = await Deno.readFile("test.txt");
+						console.log(decoder.decode(data));
+						```
+					2. Run without permissions:
+						```bash
+						deno run readFile.ts
+						```
+					3. Add permissions:
+						```bash
+						deno run --allow-read readFile.ts
+						```
+				</textarea>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>

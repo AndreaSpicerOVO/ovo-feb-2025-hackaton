@@ -1,0 +1,10 @@
+POST http://localhost:8000/shorten
+Content-Type: application/json
+
+{
+		"url": "https://deno.land"
+}
+
+###
+
+GET http://localhost:8000/bb0425
