@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { Definition, Endpoint, HttpMethods, OpenAPI } from "../models/definition";
+import { Definition, Endpoint, HttpMethods, OpenAPI, Schema } from "../models/definition";
 import crypto from 'crypto';
 import { promises as fs } from 'fs';
 
@@ -32,59 +32,45 @@ export const generateApiDefintion = async (req: Request<Definition>, res: Respon
         const parameters =  endpoint?.parameters?.map((param) => ({ name: param, in: "query", required: true, schema: { type: "string" } }));
         endpoint.responseSchema?.statusCode
         //@ts-ignore
-        apiDefinition.paths= {
-            [path as string]: {
+        apiDefinition.paths = {
+          [path as string]: {
             [method as HttpMethods]: {
-            tags: [],
-            parameters,
-            requestBody: {
-                content: {
-                    "application/json": {
-                    schema: {
-                        type: "object",
-                        properties: {
-                        id: {
-                            type: "number",
+              tags: [],
+              parameters,
+              requestBody: endpoint.request?.schema
+                ? {
+                    content: {
+                      "application/json": {
+                        schema: {
+                          $ref: `#/components/schemas/${endpoint.request?.name}`,
                         },
-                        name: {
-                            type: "string",
-                        },
-                        description: {
-                            type: "string",
-                        },
-                        },
+                      },
                     },
-                    },
-                },
-            },
-            responses: {
+                  }
+                : undefined,
+              responses: {
                 [endpoint.responseSchema?.statusCode]: {
-                description: "Test description",
-                content: {
+                  description: "Test description",
+                  content: {
                     "application/json": {
-                    schema: {
-                        type: "object",
-                        properties: {
-                        id: {
-                            type: "number",
-                        },
-                        name: {
-                            type: "string",
-                        },
-                        description: {
-                            type: "string",
-                        },
-                        },
+                      schema: {
+                        "$ref": `#/components/schemas/${endpoint.responseSchema?.name}`,                       
+                      },
                     },
-                    },
+                  },
                 },
+                components: {
+                  schemas: {
+                    [endpoint.request?.name as string]: {
+                      type: "object",
+                     ...mapSchema(endpoint.request?.schema as Schema),
+                    },
+                  },
+                },
+              },
             },
-            security: []
-            }
-        }
-    }
-        };
-        
+          },
+        };   
     });
     const component = {id: crypto.randomUUID(), content: apiDefinition}
     try {
@@ -103,22 +89,28 @@ export const generateApiDefintion = async (req: Request<Definition>, res: Respon
 
     res.json(apiDefinition);
 };
-const arrayToRecord = <T extends { 
-          name: string;
-          in?: string;
-          description?: string;
-          required?: boolean;
-          schema?: {
-            type: string;
-            format?: string;
-            enum?: string[];
-            default?: string;
-          }}>(array: T[]): Record<string | number, T> => {
-    return array.reduce((acc, item) => {
-        acc[item.name] = item;
+
+const mapSchema = (schema: Schema) => {
+    const keys: { key: string; type: string }[]= []
+    Object.keys(schema.schema).forEach((key) => {
+        console.log({
+          [key]: {
+            type: schema.schema[key as string],
+          },
+        });
+        keys.push({[key] : {
+            type: schema.schema[key as string],
+        }})
+    })
+    return arrayToRecord(keys);
+
+}
+
+const arrayToRecord = (arr: { key: string; type: string }[]) => {
+    return arr.reduce((acc, item) => {
+        acc[item] = { type: item.type };
         return acc;
-    }, {} as Record<string | number, T>);
+    }, {} as Record<string, { type: string }>);
 };
 
 
-export const getApiDefinition = () => {};

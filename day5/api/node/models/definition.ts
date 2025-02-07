@@ -1,4 +1,4 @@
-type Schema = {
+export type Schema = {
   schema: {
     [key: string]:
       | string
@@ -20,7 +20,7 @@ export type Endpoint = {
   method: HttpMethods;
 
   request?: { schema: Schema; statusCode: number; name: string };
-  responseSchema: { schema?: Schema; statusCode: number };
+  responseSchema: { schema?: Schema; statusCode: number,name:string };
   parameters?: string[];
 };
 
@@ -208,49 +208,3 @@ type OpenApiSchema = {
         };
     };
 };
-
-const openApiSchema: OpenApiSchema = {
-    openapi: "3.0.0",
-    info: {
-        title: "API Documentation",
-        version: "1.0.0",
-        description: "API documentation for the project"
-    },
-    paths: {
-        "/example": {
-            get: {
-                summary: "Example GET endpoint",
-                parameters: [
-                    {
-                        name: "param1",
-                        in: "query",
-                        required: true,
-                        schema: {
-                            type: "string"
-                        }
-                    }
-                ],
-                responses: {
-                    "200": {
-                        description: "Successful response",
-                        content: {
-                            "application/json": {
-                                schema: {
-                                    type: "object",
-                                    properties: {
-                                        value1: {
-                                            type: "string",
-                                            nullable: true
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-};
-
-export default openApiSchema;
