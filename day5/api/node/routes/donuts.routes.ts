@@ -1,16 +1,11 @@
 import { Router } from "express";
-import {
-  getAllDonuts,
-  createNewDonut,
-  getDonutById,
-  updateDonut,
-  deleteDonut,
-} from "../controllers/donuts.controllers";
+
 import { logger } from "../middlewares/logger";
+import { generateApiDefintion, getApiDefinition } from "../controllers/openapi-generator";
 
 const router = Router();
 router.use(logger);
-router.route("/").get(getAllDonuts).post(createNewDonut);
-router.route("/:id").get(getDonutById).put(updateDonut).delete(deleteDonut);
+router.route("/generate").post(generateApiDefintion);
+router.route("/docs/:id").get(getApiDefinition);
 
 export default router;
