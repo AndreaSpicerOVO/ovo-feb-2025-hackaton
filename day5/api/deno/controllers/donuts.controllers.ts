@@ -4,15 +4,17 @@ import { Donut, NewDonut, DonutUpdate } from "../types.ts";
 
 // 🏆 Get all donuts
 export async function getAllDonuts(
-  req: Request,
+  _req: Request,
   res: Response<Donut[] | { error: string }>
 ) {
   try {
     const donuts = await db.selectFrom("donuts").selectAll().execute();
-    return res.json(donuts);
+    res.json(donuts);
+    return;
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
+    return;
   }
 }
 
@@ -24,7 +26,8 @@ export async function createNewDonut(
   try {
     const newDonut: NewDonut = req.body;
     if (!newDonut.name) {
-      return res.status(400).json({ error: "Name is required" });
+      res.status(400).json({ error: "Name is required" });
+      return;
     }
 
     const [insertedDonut] = await db
@@ -33,10 +36,12 @@ export async function createNewDonut(
       .returningAll()
       .execute();
 
-    return res.status(201).json(insertedDonut);
+    res.status(201).json(insertedDonut);
+    return;
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
+    return;
   }
 }
 
@@ -54,13 +59,16 @@ export async function getDonutById(
       .executeTakeFirst();
 
     if (!donut) {
-      return res.status(404).json({ error: "Donut not found" });
+      res.status(404).json({ error: "Donut not found" });
+      return;
     }
 
-    return res.json(donut);
+    res.json(donut);
+    return;
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
+    return;
   }
 }
 
@@ -81,13 +89,14 @@ export async function updateDonut(
       .executeTakeFirst();
 
     if (!updatedDonut) {
-      return res.status(404).json({ error: "Donut not found" });
+      res.status(404).json({ error: "Donut not found" });
+      return;
     }
 
-    return res.json(updatedDonut);
+    res.json(updatedDonut);
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
   }
 }
 
@@ -106,12 +115,13 @@ export async function deleteDonut(
       .executeTakeFirst();
 
     if (!deletedDonut) {
-      return res.status(404).json({ error: "Donut not found" });
+      res.status(404).json({ error: "Donut not found" });
+      return;
     }
 
-    return res.status(204).json({ success: true });
+    res.status(204).json({ success: true });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
   }
 }
