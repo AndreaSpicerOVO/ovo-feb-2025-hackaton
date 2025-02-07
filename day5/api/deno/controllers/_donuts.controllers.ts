@@ -1,7 +1,4 @@
-import type {
-  Request,
-  Response,
-} from "../$node_modules/@types/express/index.js";
+import type { Request, Response } from "express";
 
 interface Donut {
   name: string;
@@ -11,7 +8,7 @@ interface Donut {
 const donutStore: Donut[] = [];
 let id = 0;
 
-export function getAllDonuts(req: Request, res: Response) {
+export function getAllDonuts(_req: Request, res: Response) {
   return res.json(donutStore);
 }
 
@@ -53,7 +50,7 @@ export function updateDonut(req: Request, res: Response) {
   }
 }
 
-export function deleteDonut(req, res) {
+export function deleteDonut(req: Request, res: Response) {
   try {
     const index = donutStore.findIndex(
       (donut) => donut.id === parseInt(req.params.id)
