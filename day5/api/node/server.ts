@@ -10,6 +10,6 @@ app.get("/", logger, (req: Request, res: Response) => {
   res.json({ message: "Hello" });
 });
 
-app.use("/api/v1/donuts", donutRoutes);
+app.use("/api/v1", donutRoutes);
 
 app.listen(4321);
