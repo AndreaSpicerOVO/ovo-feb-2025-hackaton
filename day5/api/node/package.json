@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/pg-pool": "^2.0.6"
+  },
+  "name": "node-api",
+  "description": "- You can build these entirely yourself and not use third party tools (but probably don't!) - You can use a 3rd party library to help build them: [Express](https://www.npmjs.com/package/inquirer) and [Fastify](https://www.npmjs.com/package/commander) are big in the space. I'll give you an Express setup that you can ignore or not. - The VS Code extension REST Client can be useful for testing API endpoints (changing methods, body, etc) - otherwise a client like Postman/Insomnia will be useful. - Plan out the endpoints - which are you going to offer and why. - For testing, I'd suggest can using vitest for unit tests and supertest for more functional end-to-end tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.21.2",
+    "kysely": "^0.27.5",
+    "pg-int8": "^1.0.1",
+    "pg-protocol": "^1.7.0",
+    "pg-types": "^2.2.0",
+    "postgres-array": "^2.0.0",
+    "postgres-bytea": "^1.0.0",
+    "postgres-date": "^1.0.7",
+    "postgres-interval": "^1.2.0",
+    "undici-types": "^6.20.0",
+    "xtend": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

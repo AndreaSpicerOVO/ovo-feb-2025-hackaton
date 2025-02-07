@@ -1,4 +1,4 @@
-import { Database } from "./types.ts";
+import { Database } from "./types";
 import Pool from "pg-pool";
 import { Kysely, PostgresDialect } from "kysely";
 

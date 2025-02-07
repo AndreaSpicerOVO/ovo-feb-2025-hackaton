@@ -1,7 +1,7 @@
 import { Generated, Insertable, Selectable, Updateable } from "kysely";
 
 export interface Database {
-  donut: DonutTable;
+  donuts: DonutTable;
 }
 
 export interface DonutTable {

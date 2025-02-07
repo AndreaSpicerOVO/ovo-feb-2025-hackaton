@@ -5,8 +5,8 @@ import {
   getDonutById,
   updateDonut,
   deleteDonut,
-} from "../controllers/donuts.controllers.ts";
-import { logger } from "../middlewares/logger.ts";
+} from "../controllers/donuts.controllers";
+import { logger } from "../middlewares/logger";
 
 const router = Router();
 router.use(logger);

@@ -1,41 +1,55 @@
-import type { Request, Response } from "npm:@types/express";
-import { db } from "../database.ts";
-import { Donut } from "../types.ts";
+import type { Request, Response } from "express";
+import { db } from "../database";
+import { Donut, NewDonut, DonutUpdate } from "../types";
 
 // 🏆 Get all donuts
-export async function getAllDonuts(req: Request, res: Response) {
+export async function getAllDonuts(
+  _req: Request,
+  res: Response<Donut[] | { error: string }>
+) {
   try {
     const donuts = await db.selectFrom("donuts").selectAll().execute();
-    return res.json(donuts);
+    res.json(donuts);
+    return;
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
+    return;
   }
 }
 
 // 🍩 Create a new donut
-export async function createNewDonut(req: Request, res: Response) {
+export async function createNewDonut(
+  req: Request,
+  res: Response<Donut | { error: string }>
+) {
   try {
-    const { name, rating, review } = req.body;
-    if (!name) {
-      return res.status(400).json({ error: "Name is required" });
+    const newDonut: NewDonut = req.body;
+    if (!newDonut.name) {
+      res.status(400).json({ error: "Name is required" });
+      return;
     }
 
-    const [newDonut] = await db
+    const [insertedDonut] = await db
       .insertInto("donuts")
-      .values({ name, rating, review })
-      .returning(["id", "name", "rating", "review"])
+      .values(newDonut)
+      .returningAll()
       .execute();
 
-    return res.status(201).json(newDonut);
+    res.status(201).json(insertedDonut);
+    return;
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
+    return;
   }
 }
 
 // 🔍 Get a donut by ID
-export async function getDonutById(req: Request, res: Response) {
+export async function getDonutById(
+  req: Request,
+  res: Response<Donut | { error: string }>
+) {
   try {
     const { id } = req.params;
     const donut = await db
@@ -45,58 +59,69 @@ export async function getDonutById(req: Request, res: Response) {
       .executeTakeFirst();
 
     if (!donut) {
-      return res.status(404).json({ error: "Donut not found" });
+      res.status(404).json({ error: "Donut not found" });
+      return;
     }
 
-    return res.json(donut);
+    res.json(donut);
+    return;
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
+    return;
   }
 }
 
 // ✏️ Update a donut
-export async function updateDonut(req: Request, res: Response) {
+export async function updateDonut(
+  req: Request,
+  res: Response<Donut | { error: string }>
+) {
   try {
     const { id } = req.params;
-    const { name, rating, review } = req.body;
+    const updatedData: DonutUpdate = req.body;
 
     const updatedDonut = await db
       .updateTable("donuts")
-      .set({ name, rating, review })
+      .set(updatedData)
       .where("id", "=", parseInt(id))
-      .returning(["id", "name", "rating", "review"])
+      .returningAll()
       .executeTakeFirst();
 
     if (!updatedDonut) {
-      return res.status(404).json({ error: "Donut not found" });
+      res.status(404).json({ error: "Donut not found" });
+      return;
     }
 
-    return res.json(updatedDonut);
+    res.json(updatedDonut);
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
   }
 }
 
 // 🗑️ Delete a donut
-export async function deleteDonut(req: Request, res: Response) {
+export async function deleteDonut(
+  req: Request,
+  res: Response<{ success: boolean } | { error: string }>
+) {
   try {
     const { id } = req.params;
 
     const deletedDonut = await db
       .deleteFrom("donuts")
       .where("id", "=", parseInt(id))
-      .returning(["id", "name"])
+      .returningAll()
       .executeTakeFirst();
 
     if (!deletedDonut) {
-      return res.status(404).json({ error: "Donut not found" });
+      res.status(404).json({ error: "Donut not found" });
+      return;
     }
 
-    return res.status(204).send();
+    res.status(204).json({ success: true });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ error: "Something went wrong" });
+    res.status(500).json({ error: "Something went wrong" });
   }
 }

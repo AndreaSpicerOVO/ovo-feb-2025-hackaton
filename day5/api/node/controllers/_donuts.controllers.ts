@@ -1,4 +1,4 @@
-import type { Request, Response } from "npm:@types/express";
+import type { Request, Response } from "express";
 
 interface Donut {
   name: string;
@@ -50,7 +50,7 @@ export function updateDonut(req: Request, res: Response) {
   }
 }
 
-export function deleteDonut(req, res) {
+export function deleteDonut(req: Request, res: Response) {
   try {
     const index = donutStore.findIndex(
       (donut) => donut.id === parseInt(req.params.id)
