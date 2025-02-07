@@ -37,6 +37,7 @@ Create an API in TypeScript that runs in either Node or Deno!
 * UI Integration: If you would prefer to create a UI, go for it!
 
 ---
+And some ideas if you decide to go down the API route ... 
 
 ## **1️⃣ Code Snippet Manager API**
 **Description:** A REST API for saving, retrieving, and sharing code snippets.  
